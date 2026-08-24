@@ -1,0 +1,430 @@
+[
+  {
+    "id": "branch-天体物理学",
+    "type": "branch",
+    "name_cn": "天体物理学",
+    "name_en": "Astrophysics",
+    "description": "研究天体的物理性质和过程",
+    "category": "未分类",
+    "representative": "恒星物理、星系物理",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-天体力学",
+    "type": "branch",
+    "name_cn": "天体力学",
+    "name_en": "Celestial Mechanics",
+    "description": "研究天体运动和引力相互作用",
+    "category": "未分类",
+    "representative": "轨道力学、摄动理论",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-天体化学",
+    "type": "branch",
+    "name_cn": "天体化学",
+    "name_en": "Astrochemistry",
+    "description": "研究宇宙中的化学反应和分子",
+    "category": "未分类",
+    "representative": "星际分子、彗星化学",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-宇宙学",
+    "type": "branch",
+    "name_cn": "宇宙学",
+    "name_en": "Cosmology",
+    "description": "研究宇宙的起源、演化和结构",
+    "category": "未分类",
+    "representative": "大爆炸理论、暗物质",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-太阳物理学",
+    "type": "branch",
+    "name_cn": "太阳物理学",
+    "name_en": "Solar Physics",
+    "description": "研究太阳的物理性质和活动",
+    "category": "未分类",
+    "representative": "太阳黑子、太阳风",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-行星科学",
+    "type": "branch",
+    "name_cn": "行星科学",
+    "name_en": "Planetary Science",
+    "description": "研究行星及其卫星",
+    "category": "未分类",
+    "representative": "行星形成、行星大气",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-恒星天文学",
+    "type": "branch",
+    "name_cn": "恒星天文学",
+    "name_en": "Stellar Astronomy",
+    "description": "研究恒星的物理和演化",
+    "category": "未分类",
+    "representative": "恒星结构、恒星演化",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-星系天文学",
+    "type": "branch",
+    "name_cn": "星系天文学",
+    "name_en": "Galactic Astronomy",
+    "description": "研究星系的形成和演化",
+    "category": "未分类",
+    "representative": "星系分类、星系演化",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-恒星物理",
+    "type": "branch",
+    "name_cn": "恒星物理",
+    "name_en": "",
+    "description": "研究恒星的结构、演化和能源",
+    "category": "未分类",
+    "representative": "",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-星系物理",
+    "type": "branch",
+    "name_cn": "星系物理",
+    "name_en": "",
+    "description": "研究星系的结构、演化和动力学",
+    "category": "未分类",
+    "representative": "",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-高能天体物理",
+    "type": "branch",
+    "name_cn": "高能天体物理",
+    "name_en": "",
+    "description": "研究X射线、γ射线等高能现象",
+    "category": "未分类",
+    "representative": "",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-相对论天体物理",
+    "type": "branch",
+    "name_cn": "相对论天体物理",
+    "name_en": "",
+    "description": "研究强引力场中的天体现象",
+    "category": "未分类",
+    "representative": "",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-物理驱动",
+    "type": "branch",
+    "name_cn": "物理驱动",
+    "name_en": "",
+    "description": "以物理学原理解释天文现象",
+    "category": "未分类",
+    "representative": "",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-观测验证",
+    "type": "branch",
+    "name_cn": "观测验证",
+    "name_en": "",
+    "description": "通过观测验证理论预测",
+    "category": "未分类",
+    "representative": "",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-数值模拟",
+    "type": "branch",
+    "name_cn": "数值模拟",
+    "name_en": "",
+    "description": "大量使用数值模拟",
+    "category": "未分类",
+    "representative": "",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-跨学科",
+    "type": "branch",
+    "name_cn": "跨学科",
+    "name_en": "",
+    "description": "与物理学、数学等学科交叉",
+    "category": "未分类",
+    "representative": "",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-轨道力学",
+    "type": "branch",
+    "name_cn": "轨道力学",
+    "name_en": "",
+    "description": "研究天体轨道运动和预测",
+    "category": "未分类",
+    "representative": "",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-摄动理论",
+    "type": "branch",
+    "name_cn": "摄动理论",
+    "name_en": "",
+    "description": "研究摄动对天体轨道的影响",
+    "category": "未分类",
+    "representative": "",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-混沌天体力学",
+    "type": "branch",
+    "name_cn": "混沌天体力学",
+    "name_en": "",
+    "description": "研究天体运动的混沌行为",
+    "category": "未分类",
+    "representative": "",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-航天器轨道设计",
+    "type": "branch",
+    "name_cn": "航天器轨道设计",
+    "name_en": "",
+    "description": "研究航天器轨道设计和优化",
+    "category": "未分类",
+    "representative": "",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-数学严谨",
+    "type": "branch",
+    "name_cn": "数学严谨",
+    "name_en": "",
+    "description": "以严谨数学为基础",
+    "category": "未分类",
+    "representative": "",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-预测精确",
+    "type": "branch",
+    "name_cn": "预测精确",
+    "name_en": "",
+    "description": "能精确预测天体位置",
+    "category": "未分类",
+    "representative": "",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-应用广泛",
+    "type": "branch",
+    "name_cn": "应用广泛",
+    "name_en": "",
+    "description": "应用于航天器轨道设计",
+    "category": "未分类",
+    "representative": "",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-历史悠久",
+    "type": "branch",
+    "name_cn": "历史悠久",
+    "name_en": "",
+    "description": "有悠久历史（牛顿力学）",
+    "category": "未分类",
+    "representative": "",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-物理宇宙学",
+    "type": "branch",
+    "name_cn": "物理宇宙学",
+    "name_en": "",
+    "description": "研究宇宙的起源、演化和结构",
+    "category": "未分类",
+    "representative": "",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-观测宇宙学",
+    "type": "branch",
+    "name_cn": "观测宇宙学",
+    "name_en": "",
+    "description": "通过观测研究宇宙的大尺度结构",
+    "category": "未分类",
+    "representative": "",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-理论宇宙学",
+    "type": "branch",
+    "name_cn": "理论宇宙学",
+    "name_en": "",
+    "description": "通过理论模型研究宇宙",
+    "category": "未分类",
+    "representative": "",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-早期宇宙学",
+    "type": "branch",
+    "name_cn": "早期宇宙学",
+    "name_en": "",
+    "description": "研究宇宙早期（大爆炸后）的演化",
+    "category": "未分类",
+    "representative": "",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-宏大尺度",
+    "type": "branch",
+    "name_cn": "宏大尺度",
+    "name_en": "",
+    "description": "研究整个宇宙的大尺度结构",
+    "category": "未分类",
+    "representative": "",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-观测驱动",
+    "type": "branch",
+    "name_cn": "观测驱动",
+    "name_en": "",
+    "description": "依赖先进观测设备",
+    "category": "未分类",
+    "representative": "",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "branch-理论深刻",
+    "type": "branch",
+    "name_cn": "理论深刻",
+    "name_en": "",
+    "description": "涉及深刻的物理理论（广义相对论、量子力学）",
+    "category": "未分类",
+    "representative": "",
+    "source_file": "02_天文分支与特点/02_天文分支与特点.md"
+  },
+  {
+    "id": "master-伽利略",
+    "type": "master",
+    "name_cn": "伽利略",
+    "name_en": "Galileo",
+    "title": "望远镜天文观测奠基者",
+    "nationality": "",
+    "birth_year": 1564,
+    "death_year": 1642,
+    "lifespan": "1564-1642",
+    "key_thoughts": [
+      {
+        "thought": "望远镜观测",
+        "explain": "首次用望远镜观测天空"
+      },
+      {
+        "thought": "观测证实日心说",
+        "explain": "观测到木星卫星、太阳黑子，证实日心说"
+      },
+      {
+        "thought": "现代观测天文学奠基",
+        "explain": "开创现代观测天文学"
+      }
+    ],
+    "key_works": [
+      "《星际使者》"
+    ],
+    "source_file": "06_天文大师与学者/06_天文大师与学者.md",
+    "section": "二、伽利略：望远镜天文观测奠基者"
+  },
+  {
+    "id": "master-牛顿",
+    "type": "master",
+    "name_cn": "牛顿",
+    "name_en": "Newton",
+    "title": "天体力学奠基者",
+    "nationality": "",
+    "birth_year": 1643,
+    "death_year": 1727,
+    "lifespan": "1643-1727",
+    "key_thoughts": [
+      {
+        "thought": "万有引力定律",
+        "explain": "万有引力定律，解释天体运动"
+      },
+      {
+        "thought": "天体力学",
+        "explain": "建立天体力学体系"
+      },
+      {
+        "thought": "自然哲学的数学原理",
+        "explain": "系统阐述万有引力定律和力学三大定律"
+      }
+    ],
+    "key_works": [
+      "《自然哲学的数学原理》"
+    ],
+    "source_file": "06_天文大师与学者/06_天文大师与学者.md",
+    "section": "三、牛顿：天体力学奠基者"
+  },
+  {
+    "id": "master-爱因斯坦",
+    "type": "master",
+    "name_cn": "爱因斯坦",
+    "name_en": "Einstein",
+    "title": "相对论与现代天体物理学奠基者",
+    "nationality": "",
+    "birth_year": 1879,
+    "death_year": 1955,
+    "lifespan": "1879-1955",
+    "key_thoughts": [
+      {
+        "thought": "狭义相对论",
+        "explain": "时间、空间、质量、能量相对性"
+      },
+      {
+        "thought": "广义相对论",
+        "explain": "引力是时空弯曲的表现"
+      },
+      {
+        "thought": "现代天体物理学奠基",
+        "explain": "奠定现代天体物理学基础"
+      }
+    ],
+    "key_works": [
+      "《广义相对论》"
+    ],
+    "source_file": "06_天文大师与学者/06_天文大师与学者.md",
+    "section": "四、爱因斯坦：相对论与现代天体物理学奠基者"
+  },
+  {
+    "id": "quote-哥白尼",
+    "type": "quote",
+    "name_cn": "哥白尼",
+    "text": "\"太阳是宇宙的中心。\"",
+    "source_file": "06_天文大师与学者/06_天文大师与学者.md"
+  },
+  {
+    "id": "quote-伽利略",
+    "type": "quote",
+    "name_cn": "伽利略",
+    "text": "\"但它（地球）确实在动。\"",
+    "source_file": "06_天文大师与学者/06_天文大师与学者.md"
+  },
+  {
+    "id": "quote-牛顿",
+    "type": "quote",
+    "name_cn": "牛顿",
+    "text": "\"如果说我看得比别人远，那是因为我站在巨人的肩膀上。\"",
+    "source_file": "06_天文大师与学者/06_天文大师与学者.md"
+  },
+  {
+    "id": "quote-爱因斯坦",
+    "type": "quote",
+    "name_cn": "爱因斯坦",
+    "text": "\"宇宙最不可理解之处，是它居然是可以理解的。\"",
+    "source_file": "06_天文大师与学者/06_天文大师与学者.md"
+  }
+]
