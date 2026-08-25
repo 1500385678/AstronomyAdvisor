@@ -119,19 +119,21 @@ _CATEGORY_MARKERS = [
 
 
 def _detect_category(text: str, table_pos: int) -> str:
-    """在 table 之前最近的"**关键词**："标记决定分类。"""
+    """在 table 之前最近的"**关键词**："标记决定分类。
+
+    修复:旧版用迭代式两两比较,会因 last_cat 起始为"未分类"导致 cur_idx=-1,
+    进而使首次找到的 marker 永远胜出,后续段全部归到"核心分支"。
+    正确做法:扫所有 marker,取离 table 最近的(位置最大)那一个。
+    """
     prefix = text[:table_pos]
-    last_cat = "未分类"
+    best_pos = -1
+    best_cat = "未分类"
     for marker, cat in _CATEGORY_MARKERS:
-        # 最近一次出现位置
         idx = prefix.rfind(f"**{marker}**")
-        if idx >= 0:
-            # 用位置最靠后(最近)的标记
-            cur_idx = prefix.rfind(f"**{last_cat.split(' / ')[0]}**")
-            if idx > cur_idx or cur_idx < 0:
-                last_cat = cat
-    # 速查表表头是"分支|说明",通过 "**速查**" 标记
-    return last_cat
+        if idx >= 0 and idx > best_pos:
+            best_pos = idx
+            best_cat = cat
+    return best_cat
 
 
 def extract_branches(md_text: str, source_file: str) -> list[dict]:
@@ -146,9 +148,13 @@ def extract_branches(md_text: str, source_file: str) -> list[dict]:
             # 跳过名言表(06 才会出现,02 不会;保险起见做一次过滤)
             if any("名言" in h for h in header):
                 continue
-            # 找当前表在段内的位置
-            table_pos = sec_with_h2.find("|".join(header))
-            category = _detect_category(sec_with_h2, table_pos if table_pos >= 0 else 0)
+            # 找当前表在段内的位置:
+            # 不能用 "|".join(header) —— 实际表格行是 "| 分支 | 说明 |" 含空格
+            # 用正则匹配 "| 分支 | 说明 | ..." 容许空格
+            header_pat = r"\|\s*" + r"\s*\|\s*".join(re.escape(h) for h in header) + r"\s*\|"
+            m = re.search(header_pat, sec_with_h2)
+            table_pos = m.start() if m else 0
+            category = _detect_category(sec_with_h2, table_pos)
             # 速查表与"核心领域"在 02 末尾并列,标记会重叠 → 靠"速查"段标题里"**速查**"就近匹配
             for row in rows:
                 if not row or not row[0]:
