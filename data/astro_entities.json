@@ -310,12 +310,42 @@
     "source_file": "02_天文分支与特点/02_天文分支与特点.md"
   },
   {
+    "id": "master-哥白尼",
+    "type": "master",
+    "name_cn": "哥白尼",
+    "name_en": "Copernicus",
+    "title": "日心说开创者",
+    "nationality": "波兰",
+    "birth_year": 1473,
+    "death_year": 1543,
+    "lifespan": "1473-1543",
+    "key_thoughts": [
+      {
+        "thought": "日心说",
+        "explain": "太阳是宇宙的中心，地球绕太阳运转"
+      },
+      {
+        "thought": "天体运行论",
+        "explain": "系统阐述日心说理论"
+      },
+      {
+        "thought": "现代天文学奠基",
+        "explain": "引发天文学革命"
+      }
+    ],
+    "key_works": [
+      "《天体运行论》"
+    ],
+    "source_file": "06_天文大师与学者/06_天文大师与学者.md",
+    "section": "哥白尼：日心说开创者"
+  },
+  {
     "id": "master-伽利略",
     "type": "master",
     "name_cn": "伽利略",
     "name_en": "Galileo",
     "title": "望远镜天文观测奠基者",
-    "nationality": "",
+    "nationality": "意大利",
     "birth_year": 1564,
     "death_year": 1642,
     "lifespan": "1564-1642",
@@ -345,7 +375,7 @@
     "name_cn": "牛顿",
     "name_en": "Newton",
     "title": "天体力学奠基者",
-    "nationality": "",
+    "nationality": "英国",
     "birth_year": 1643,
     "death_year": 1727,
     "lifespan": "1643-1727",
@@ -375,7 +405,7 @@
     "name_cn": "爱因斯坦",
     "name_en": "Einstein",
     "title": "相对论与现代天体物理学奠基者",
-    "nationality": "",
+    "nationality": "德国",
     "birth_year": 1879,
     "death_year": 1955,
     "lifespan": "1879-1955",

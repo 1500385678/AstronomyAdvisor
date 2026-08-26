@@ -192,12 +192,16 @@ def extract_masters(md_text: str, source_file: str) -> list[dict]:
     entities: list[dict] = []
     seen: set[str] = set()
 
-    # 1) 从每个 h2 段抽大师档案
-    sections = re.split(r"^## ", md_text, flags=re.MULTILINE)
+    # 1) 从每个 h2 / h3 段抽大师档案
+    #    兼容 06 文件"一、天文大师讲大师"内部的 ### 哥白尼(等)h3 段
+    sections = re.split(r"^##+ ", md_text, flags=re.MULTILINE)
     for sec in sections[1:]:
         first_line = sec.splitlines()[0].strip()
-        # 形如 "## 二、伽利略：望远镜天文观测奠基者"
+        # h2 形如 "二、伽利略：望远镜天文观测奠基者"
         m = re.match(r"^[一二三四五六七八九十]+、(.{2,8})[：:](.*)$", first_line)
+        # h3 形如 "哥白尼：日心说开创者"(无序号前缀)
+        if not m:
+            m = re.match(r"^(?!#)(.{2,8})[：:](.*)$", first_line)
         if not m:
             continue
         name = m.group(1).strip()
@@ -209,8 +213,12 @@ def extract_masters(md_text: str, source_file: str) -> list[dict]:
         death = int(bio.group(2)) if bio else None
         lifespan = f"{birth}-{death}" if birth and death else ""
 
-        # 国籍(取"伟大/著名"前的中文短语,例 "波兰伟大天文学家")
-        nat = re.search(r"([\u4e00-\u9fa5]{1,6}?)(伟大|著名|知名)", sec)
+        # 国籍(取"伟大/著名"前的中文短语,例 "波兰伟大天文学家",
+        # 或 "波兰**伟大天文学家" 中间含 markdown 加粗 ** 也算)
+        nat = re.search(
+            r"([\u4e00-\u9fa5]{1,6}?)\**?(伟大|著名|知名)",
+            sec,
+        )
         nationality = nat.group(1) if nat else ""
 
         # 核心思想表
