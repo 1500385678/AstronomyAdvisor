@@ -7,6 +7,7 @@ Phase 0 步骤 0.1:把张勇已有的两篇"自由文本"md 抽成结构化 JSON
 
 输入:
   - ../../02_天文分支与特点/02_天文分支与特点.md   (天文分支清单)
+  - ../../04_天文故事与传说/04_天文故事与传说.md   (经典故事 / 天文传说)
   - ../../06_天文大师与学者/06_天文大师与学者.md   (天文学家与学者)
 
 输出:
@@ -15,8 +16,9 @@ Phase 0 步骤 0.1:把张勇已有的两篇"自由文本"md 抽成结构化 JSON
 抽取策略(启发式,不做 LLM):
   1. md 表格遍历(识别 "## " 段内的 |...| 块)
   2. 02 文件:按表头"核心分支 / 按研究对象 / 速查 / 核心领域"分类,每行 = 一个 branch 实体
-  3. 06 文件:解析 "## X、{姓名}:{头衔}" 段,提取生卒、国籍、核心思想表
-  4. 06 文件:另抽"大师代表作"表(代表作回填)与"天文大师名言"表(quote 实体)
+  3. 04 文件:抽"经典天文故事"与"天文传说"两张表,跳过"大师名言"表(与 06 重复)
+  4. 06 文件:解析 "## X、{姓名}:{头衔}" 段,提取生卒、国籍、核心思想表
+  5. 06 文件:另抽"大师代表作"表(代表作回填)与"天文大师名言"表(quote 实体)
 
 不做:
   - 不抓 88 星座 / HYG 星表(留给 Phase 0 后续步骤)
@@ -45,6 +47,7 @@ LIB_ROOT = SCRIPT_DIR.parent.parent
 DEFAULT_SOURCE_ROOT = LIB_ROOT
 
 SOURCE_02_REL = "02_天文分支与特点/02_天文分支与特点.md"
+SOURCE_04_REL = "04_天文故事与传说/04_天文故事与传说.md"
 SOURCE_06_REL = "06_天文大师与学者/06_天文大师与学者.md"
 
 # 中英名常量(覆盖 02 + 06 中出现的几个高频名,缺失留空,后续手补)
@@ -184,6 +187,71 @@ def extract_branches(md_text: str, source_file: str) -> list[dict]:
 
 
 # ---------------------------------------------------------------------------
+# 04:天文故事与传说
+# ---------------------------------------------------------------------------
+
+
+# 04 表头 → (实体类型前缀, category 中文) 的映射
+# "大师名言"表跳过:与 06 重复,避免 quote 实体重复入库
+_STORY_TABLE_RULES = [
+    (("故事",), "story", "经典故事"),
+    (("传说",), "legend", "天文传说"),
+]
+
+
+def _classify_story_table(header: list[str]) -> tuple[str, str] | None:
+    """根据表头判断是否要抽、并决定 type 前缀 + category。
+
+    优先级:出现"故事" → 故事;出现"传说" → 传说;出现"名言" → 跳过(None)。
+    """
+    if any("名言" in h for h in header):
+        return None
+    for keys, type_prefix, cat in _STORY_TABLE_RULES:
+        if any(any(k in h for k in keys) for h in header):
+            return type_prefix, cat
+    return None
+
+
+def extract_stories_legends(md_text: str, source_file: str) -> list[dict]:
+    """从 04 文件抽"经典天文故事"与"天文传说"两表,每行 = 一个实体。
+
+    字段:type=story | legend, name_cn, category, insight, 其它空值。
+    名言表直接跳过(与 06 quote 重复)。
+    """
+    entities: list[dict] = []
+    seen: set[str] = set()
+
+    for header, rows in parse_md_tables(md_text):
+        rule = _classify_story_table(header)
+        if rule is None:
+            continue
+        type_prefix, category = rule
+        for r in rows:
+            if not r or not r[0]:
+                continue
+            # 跳表头行(在数据中残留"故事"或"传说"作为列名)
+            if r[0] in ("故事", "传说", "经典天文故事", "天文传说", "名", "大师"):
+                continue
+            eid = f"{type_prefix}-{slugify_zh(r[0])}"
+            if eid in seen:
+                continue
+            seen.add(eid)
+            entities.append(
+                {
+                    "id": eid,
+                    "type": type_prefix,
+                    "name_cn": r[0].strip(),
+                    "name_en": "",
+                    "category": category,
+                    "insight": r[1].strip() if len(r) > 1 and r[1] else "",
+                    "description": "",
+                    "source_file": source_file,
+                }
+            )
+    return entities
+
+
+# ---------------------------------------------------------------------------
 # 06:天文大师与学者
 # ---------------------------------------------------------------------------
 
@@ -313,19 +381,25 @@ def main() -> int:
     args = p.parse_args()
 
     src02 = Path(args.source_root) / SOURCE_02_REL
+    src04 = Path(args.source_root) / SOURCE_04_REL
     src06 = Path(args.source_root) / SOURCE_06_REL
     if not src02.exists():
         print(f"[ERR] 缺源文件: {src02}", file=sys.stderr)
+        return 2
+    if not src04.exists():
+        print(f"[ERR] 缺源文件: {src04}", file=sys.stderr)
         return 2
     if not src06.exists():
         print(f"[ERR] 缺源文件: {src06}", file=sys.stderr)
         return 2
 
     md02 = src02.read_text(encoding="utf-8")
+    md04 = src04.read_text(encoding="utf-8")
     md06 = src06.read_text(encoding="utf-8")
 
     entities: list[dict] = []
     entities.extend(extract_branches(md02, SOURCE_02_REL))
+    entities.extend(extract_stories_legends(md04, SOURCE_04_REL))
     entities.extend(extract_masters(md06, SOURCE_06_REL))
 
     out_path = Path(args.out)

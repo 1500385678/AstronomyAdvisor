@@ -310,6 +310,46 @@
     "source_file": "02_天文分支与特点/02_天文分支与特点.md"
   },
   {
+    "id": "story-哥白尼与日心说",
+    "type": "story",
+    "name_cn": "哥白尼与日心说",
+    "name_en": "",
+    "category": "经典故事",
+    "insight": "真理往往掌握在少数人手中",
+    "description": "",
+    "source_file": "04_天文故事与传说/04_天文故事与传说.md"
+  },
+  {
+    "id": "story-伽利略与望远镜",
+    "type": "story",
+    "name_cn": "伽利略与望远镜",
+    "name_en": "",
+    "category": "经典故事",
+    "insight": "观测工具的创新推动天文学飞跃发展",
+    "description": "",
+    "source_file": "04_天文故事与传说/04_天文故事与传说.md"
+  },
+  {
+    "id": "legend-牛郎织女",
+    "type": "legend",
+    "name_cn": "牛郎织女",
+    "name_en": "",
+    "category": "天文传说",
+    "insight": "天文传说，是人类对星空的诗意想象",
+    "description": "",
+    "source_file": "04_天文故事与传说/04_天文故事与传说.md"
+  },
+  {
+    "id": "legend-嫦娥奔月",
+    "type": "legend",
+    "name_cn": "嫦娥奔月",
+    "name_en": "",
+    "category": "天文传说",
+    "insight": "天文传说，是人类探索宇宙的先声",
+    "description": "",
+    "source_file": "04_天文故事与传说/04_天文故事与传说.md"
+  },
+  {
     "id": "master-哥白尼",
     "type": "master",
     "name_cn": "哥白尼",
