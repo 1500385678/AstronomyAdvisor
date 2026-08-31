@@ -56,11 +56,11 @@ uvicorn main:app --reload --port 8000
 
 ## 五、与数据层契约
 
-后端只读 [`../data/astro_entities.json`](../data/astro_entities.json) 与 [`../data/planets_seed.json`](../data/planets_seed.json),**不**直连 SQLite(Phase 0 后续接入)。当前 Phase 0 实体总览:
+后端只读 [`../data/astro_entities.json`](../data/astro_entities.json),**不**直连 SQLite(Phase 0 后续接入)。`planets_seed.json` 已通过 [`../scripts/merge_planets_seed.py`](../scripts/merge_planets_seed.py) 合并到主 JSON(2026-09-01)。当前 Phase 0 实体总览:
 
-- 实体来源:`scripts/md_to_astro_db.py` 抽取 02 / 04 / 06 md
-- 当前总数(2026-08-31):`total=43`(branch 31 / story 2 / legend 2 / master 4 / quote 4)
-- 种子:planets_seed.json 9 条(8 行星 + 冥王星矮行星),**未**合并到主 JSON(Phase 0 #2/#3/#4 正式抽取时统一合并)
+- 实体来源:`scripts/md_to_astro_db.py` 抽取 02 / 04 / 06 md + `scripts/merge_planets_seed.py` 合并行星种子
+- 当前总数(2026-09-01):`total=52`(branch 31 / story 2 / legend 2 / master 4 / quote 4 / **planet 9**)
+- 种子:planets_seed.json 9 条(8 行星 + 冥王星矮行星)已合并;深空(Messier 110)待 #4 步 4 种子就绪后合并
 
 ## 六、阶段目标
 
@@ -84,3 +84,4 @@ uvicorn main:app --reload --port 8000
 | 日期 | 变更 | 备注 |
 |------|------|------|
 | 2026-08-31 | 首版后端骨架(5 端点 + requirements + 本 README) | W2 Day 1,接 Phase 1 起步 |
+| 2026-09-01 | 合并行星种子 9 条到主 JSON(total 43→52,新增 planet type),`/entities/count` 返回 6 type 分布 | Phase 0 #4 步 5 闭项,详见 `scripts/merge_planets_seed.py` |

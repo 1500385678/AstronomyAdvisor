@@ -192,7 +192,7 @@
 | **#4 步 2** | 手工入 8 大行星权威种子 | NASA Planetary Fact Sheet | `data/planets_seed.json` | ✅ 20260829 |
 | **#4 步 3** | 抽 1 颗矮行星冥王星(is_dwarf=true)作为 schema 验证 | 同上 | 同上 | ✅ 20260829 |
 | **#4 步 4** | 入库 Messier 110 种子(M1-M110) | Messier 公开目录 | `data/deep_sky_seed.json` | 📋 |
-| **#4 步 5** | merge 行星/深空种子到 `astro_entities.json` | 种子文件 | `astro_entities.json` | 📋 |
+| **#4 步 5** | merge 行星/深空种子到 `astro_entities.json` | 种子文件 | `astro_entities.json` | ✅ 20260901 行星 9 条已合并(深空待 #4 步 4 完成后) |
 
 > **设计原则**:**schema 先行,种子入库,合并到主 JSON**。每加一个 type,先在本文档立字段,再立独立种子文件,最后由 `md_to_astro_db.py` 的合并器(或一次性脚本)合到 `astro_entities.json`,便于回滚和 review。
 
