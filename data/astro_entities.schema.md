@@ -191,8 +191,8 @@
 | **#4 步 1** | 立 8 大行星 schema | 本文档(上方 planet 字段) | — | ✅ 20260829 |
 | **#4 步 2** | 手工入 8 大行星权威种子 | NASA Planetary Fact Sheet | `data/planets_seed.json` | ✅ 20260829 |
 | **#4 步 3** | 抽 1 颗矮行星冥王星(is_dwarf=true)作为 schema 验证 | 同上 | 同上 | ✅ 20260829 |
-| **#4 步 4** | 入库 Messier 110 种子(M1-M110) | Messier 公开目录 | `data/deep_sky_seed.json` | ✅ 20260906 立 + 合 6 条 sample(M1/M31/M42/M45/M51/M57,4 object_type 全集覆盖,M45 合并时规范化 `星团` → `星团(疏散)`,6/110 剩 104 续) |
-| **#4 步 5** | merge 行星/深空种子到 `astro_entities.json` | 种子文件 | `astro_entities.json` | ✅ 20260901 行星 9 条已合并 · ✅ 20260906 深空 6 条已合并(`scripts/merge_deep_sky_seed.py` 范式复制自 `merge_constellations_seed.py` + M45 object_type 规范化,主 JSON 61 → 67 条 8 档) |
+| **#4 步 4** | 入库 Messier 110 种子(M1-M110) | Messier 公开目录 | `data/deep_sky_seed.json` | ✅ 20260906 立 + 合 6 条 sample(M1/M31/M42/M45/M51/M57,4 object_type 全集覆盖,M45 合并时规范化 `星团` → `星团(疏散)`,6/110 剩 104 续) · 🆕 20260908 扩 6 凑 12(M2/M13/M27/M33/M44/M101,新增 4 object_type 全集 + 球状/疏散细分:M2/M13 球状 + M44 疏散 + M27 行星状星云归星云;`scripts/merge_deep_sky_seed.py` 二次跑 idempotent 6/12 全 skipped,12/110 剩 98 续) |
+| **#4 步 5** | merge 行星/深空种子到 `astro_entities.json` | 种子文件 | `astro_entities.json` | ✅ 20260901 行星 9 条已合并 · ✅ 20260906 深空 6 条已合并(`scripts/merge_deep_sky_seed.py` 范式复制自 `merge_constellations_seed.py` + M45 object_type 规范化,主 JSON 61 → 67 条 8 档) · 🆕 20260908 深空扩 6 凑 12 已合并(主 JSON 67 → 73 条 8 档,deep_sky_object 6 → 12,0829 起 11 巡检 0 启动扩子项破零) |
 
 > **设计原则**:**schema 先行,种子入库,合并到主 JSON**。每加一个 type,先在本文档立字段,再立独立种子文件,最后由 `md_to_astro_db.py` 的合并器(或一次性脚本)合到 `astro_entities.json`,便于回滚和 review。
 
