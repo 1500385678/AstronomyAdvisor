@@ -13,7 +13,7 @@
 - T4 每日 02:00 检查项目并更新开发计划
 - T5 每日 03:00 完成小步开发并 commit + push
 
-## 当前状态 · 2026-09-14 凌晨
+## 当前状态 · 2026-09-16 凌晨
 
 | 维度 | 数据 | commit |
 | --- | --- | --- |
@@ -22,17 +22,19 @@
 | Phase 0 #4 深空扩 6 凑 30 | 30/110 闭项 | 0911 扩 6 commit |
 | Phase 0 #4 深空扩 6 凑 36 | 36/110 闭项 | 0912 扩 6 commit |
 | Phase 0 #4 深空扩 6 凑 42 | 42/110 闭项 | 0914 扩 6 commit |
+| Phase 0 #4 深空扩 6 凑 48 | 48/110 闭项 | 0915 扩 6 commit |
+| Phase 0 #4 深空扩 6 凑 54 | 54/110 闭项 | 0916 扩 6 commit |
 | Phase 1 W2 后端骨架 | 5 端点 FastAPI | `70596d3` |
-| 主 JSON total | 103(branch 31 / planet 9 / constellation 9 / **deep_sky_object 42** / master 4 / quote 4 / story 2 / legend 2) | — |
+| 主 JSON total | 115(branch 31 / planet 9 / constellation 9 / **deep_sky_object 54** / master 4 / quote 4 / story 2 / legend 2) | — |
 
 ### 合并器 · 沙箱式运行
 ```bash
 cd AstronomyWeb
 python3 scripts/merge_constellations_seed.py   # 0903 步 3 合并器
 python3 scripts/merge_planets_seed.py          # 0901 步 5 合并器
-python3 scripts/merge_deep_sky_seed.py         # 0906 步 5 合并器 + 0908 扩 6 凑 12 + 0909 扩 6 凑 18 + 0910 扩 6 凑 24 + 0911 扩 6 凑 30 + 0912 扩 6 凑 36 + 0914 扩 6 凑 42
+python3 scripts/merge_deep_sky_seed.py         # 0906 步 5 合并器 + 0908 扩 6 凑 12 + 0909 扩 6 凑 18 + 0910 扩 6 凑 24 + 0911 扩 6 凑 30 + 0912 扩 6 凑 36 + 0914 扩 6 凑 42 + 0915 扩 6 凑 48 + 0916 扩 6 凑 54
 ```
-三脚本幂等(同 id 二次合并 = skipped,不重复追加);`merge_deep_sky_seed.py` 0914 二次跑 42 个 dso-m* 全 skipped,103 条不变。
+三脚本幂等(同 id 二次合并 = skipped,不重复追加);`merge_deep_sky_seed.py` 0916 二次跑 54 个 dso-m* 全 skipped,115 条不变。
 
 ### 下一步(已 commit,留待 0915+ 批次)
 - 88 星座 9/88 → 18 凑 27(NW/N4/N1 三批,每批 6 条需查 IAU 88 完整表)
